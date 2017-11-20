@@ -54,7 +54,7 @@ sub quest_all_list3 {
 				$mission->{count}       = $count;
 				$mission->{goal}        = $goal;
 				$mission->{mobName_org} = $mobName;
-				$mission->{mobName}     = $monsters_lut{$mobID} || bytesToString( $mobName );
+				$mission->{mobName}     = $monsters_lut{$mobID} || I18N::bytesToString( $mobName );
 				debug "- $mobID $count / $goal $mobName\n", "info";
 			}
 		}
@@ -88,7 +88,7 @@ sub quest_add {
 		$mission->{mobID} = $mobID;
 		$mission->{conditionID} = $conditionID;
 		$mission->{count} = $count;
-		$mission->{mobName} = $monsters_lut{$mobID} || bytesToString($mobName);
+		$mission->{mobName} = $monsters_lut{$mobID} || I18N::bytesToString($mobName);
 		Plugins::callHook('quest_mission_added', {
 				questID => $questID,
 				mobID => $mobID,
